@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CSS on Jarvis Wang&#39;s vibe 筆記</title>
+    <link>//localhost:1313/tags/css/</link>
+    <description>Recent content in CSS on Jarvis Wang&#39;s vibe 筆記</description>
+    <generator>Hugo</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Tue, 20 Aug 2024 18:00:00 +0800</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>打造乾淨可讀的部落格風格：色彩與留白</title>
+      <link>//localhost:1313/blog/2024-clean-style/</link>
+      <pubDate>Tue, 20 Aug 2024 18:00:00 +0800</pubDate>
+      <guid>//localhost:1313/blog/2024-clean-style/</guid>
+      <description>&lt;p&gt;本文整理色彩、字級、留白與分隔線的實務設定：主文字 #222、分隔線 #EEE~#F2F2F2，連結以低飽和藍色呈現，保留足夠行距與段落距。&lt;/p&gt;&#xA;&lt;h2 id=&#34;色彩策略&#34;&gt;色彩策略&lt;/h2&gt;&#xA;&lt;p&gt;以中性底色加上少量重點色，降低干擾。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

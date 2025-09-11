@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Jarvis Wang&#39;s vibe 筆記</title>
+    <link>//localhost:1313/tags/hugo/</link>
+    <description>Recent content in Hugo on Jarvis Wang&#39;s vibe 筆記</description>
+    <generator>Hugo</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Mon, 15 Jul 2024 09:00:00 +0800</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>以 Hugo 快速建立個人網站：結構與版面覆寫</title>
+      <link>//localhost:1313/blog/2024-setup-hugo-site/</link>
+      <pubDate>Mon, 15 Jul 2024 09:00:00 +0800</pubDate>
+      <guid>//localhost:1313/blog/2024-setup-hugo-site/</guid>
+      <description>&lt;p&gt;本文記錄如何在 Liva 主題基礎上，透過 layouts 覆寫與自訂 CSS，打造風格乾淨、資訊層次清楚的個人網站。&lt;/p&gt;&#xA;&lt;h2 id=&#34;目錄與導覽&#34;&gt;目錄與導覽&lt;/h2&gt;&#xA;&lt;p&gt;以 &lt;code&gt;Home / Blog / About&lt;/code&gt; 的階層建立簡潔導覽，並提供目前頁面高亮顯示。&lt;/p&gt;&#xA;&lt;h2 id=&#34;版面與樣式&#34;&gt;版面與樣式&lt;/h2&gt;&#xA;&lt;p&gt;維持白底、深灰文字與低干擾分隔線，讓內容成為主角。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>雲端 on Jarvis Wang&#39;s vibe 筆記</title>
+    <link>//localhost:1313/tags/%E9%9B%B2%E7%AB%AF/</link>
+    <description>Recent content in 雲端 on Jarvis Wang&#39;s vibe 筆記</description>
+    <generator>Hugo</generator>
+    <language>zh-TW</language>
+    <lastBuildDate>Sun, 07 Sep 2025 22:15:00 +0800</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/%E9%9B%B2%E7%AB%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI 對 EDA 產業未來五年的重塑與受益者盤點</title>
+      <link>//localhost:1313/blog/2025-ai-eda-outlook/</link>
+      <pubDate>Sun, 07 Sep 2025 22:15:00 +0800</pubDate>
+      <guid>//localhost:1313/blog/2025-ai-eda-outlook/</guid>
+      <description>&lt;p&gt;過去兩年，AI 從輔助工具升級為「代理式設計助理＋GPU 加速的雲端算力」，滲透到數位實作、驗證、模擬、封裝/PCB 甚至製造（計算式微影）。本文觀點：2025–2030 年，AI 將把 EDA 生產函數整體上移（更快/更便宜/更一致），能把「AI + 數據 + GPU/雲」整成閉環飛輪的廠商，將拿走大部分增量價值。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
