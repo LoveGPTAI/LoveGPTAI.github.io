@@ -1,10 +1,213 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
-  <head>
-    <title>//localhost:1313/tags/rwd/</title>
-    <link rel="canonical" href="//localhost:1313/tags/rwd/">
-    <meta name="robots" content="noindex">
-    <meta charset="utf-8">
-    <meta http-equiv="refresh" content="0; url=//localhost:1313/tags/rwd/">
-  </head>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RWD | Jarvis Wang&#39;s vibe 筆記 | Jarvis Wang's vibe 筆記</title>
+  <link rel="icon" href="https://LoveGPTAI.github.io/images/logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="https://LoveGPTAI.github.io/images/logo.png">
+  <meta name="theme-color" content="#0d0d0d">
+  <meta name="description" content="Jarvis Wang 的個人網站與技術部落格">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://LoveGPTAI.github.io/tags/rwd/">
+  <meta property="og:site_name" content="Jarvis Wang's vibe 筆記">
+  <meta property="og:title" content="RWD | Jarvis Wang&#39;s vibe 筆記 | Jarvis Wang's vibe 筆記">
+  <meta property="og:description" content="Jarvis Wang 的個人網站與技術部落格">
+  <meta property="og:url" content="https://LoveGPTAI.github.io/tags/rwd/">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f0f0ec;
+      --card: #ffffff;
+      --text: #0d0d0d;
+      --muted: #909090;
+      --muted-dk: #555;
+      --border: #e2e2de;
+      --chip: #ececea;
+      --shadow-md: 0 4px 20px rgba(0,0,0,0.07), 0 0 0 1px rgba(0,0,0,0.04);
+      --shadow-hv: 0 8px 28px rgba(0,0,0,0.10), 0 0 0 1px rgba(0,0,0,0.05);
+      --mono: 'IBM Plex Mono', ui-monospace, monospace;
+      --sans: 'IBM Plex Sans', system-ui, sans-serif;
+      --serif: 'IBM Plex Serif', Georgia, serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0;
+      background: var(--bg); color: var(--text);
+      font-family: var(--sans); font-size: 15px; line-height: 1.7;
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: var(--text); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1000px; margin: 32px auto; padding: 0 20px; }
+    .window {
+      background: var(--card); border: 1px solid #d4d4d0;
+      border-radius: 14px; box-shadow: var(--shadow-md); overflow: hidden;
+    }
+    .window-bar {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; gap: 12px; padding: 11px 18px;
+      background: rgba(248,248,245,0.94);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .traffic-lights { display: flex; gap: 7px; align-items: center; }
+    .light { width: 12px; height: 12px; border-radius: 50%; }
+    .light.red    { background: #ff5f57; box-shadow: inset 0 0 0 0.5px rgba(0,0,0,0.14); }
+    .light.yellow { background: #febc2e; box-shadow: inset 0 0 0 0.5px rgba(0,0,0,0.10); }
+    .light.green  { background: #28c840; box-shadow: inset 0 0 0 0.5px rgba(0,0,0,0.10); }
+    .window-title { font-family: var(--mono); font-size: 11.5px; color: var(--muted); letter-spacing: 0.01em; }
+    .window-nav { margin-left: auto; display: flex; gap: 2px; }
+    .window-nav a {
+      font-size: 13px; font-weight: 500; color: #555;
+      padding: 5px 11px; border-radius: 6px; letter-spacing: 0.01em;
+      transition: background 0.12s, color 0.12s;
+    }
+    .window-nav a:hover { background: var(--chip); color: var(--text); text-decoration: none; }
+    .window-nav a.active { background: var(--text); color: #fff; }
+    header.profile {
+      display: flex; gap: 20px; align-items: flex-start;
+      padding: 26px 24px 20px; border-bottom: 1px solid var(--border);
+    }
+    .avatar-wrap {
+      flex-shrink: 0; width: 60px; height: 60px;
+      border-radius: 12px; overflow: hidden;
+      border: 1px solid var(--border); background: #f5f5f3;
+    }
+    .avatar-wrap img { width: 100%; height: 100%; object-fit: contain; display: block; background: white; }
+    .profile-text { flex: 1; }
+    .profile-text h1 {
+      margin: 0 0 3px; font-family: var(--serif);
+      font-size: 23px; font-weight: 600;
+      letter-spacing: -0.02em; color: var(--text); line-height: 1.2;
+    }
+    .profile-text h1 a { color: inherit; }
+    .profile-text h1 a:hover { text-decoration: none; }
+    .profile-text .tagline {
+      font-size: 13px; color: var(--muted); font-family: var(--mono);
+      letter-spacing: 0.02em; margin: 0;
+    }
+    main { padding: 24px; }
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px;
+      transition: box-shadow 0.18s, border-color 0.18s;
+    }
+    .card + .card { margin-top: 16px; }
+    .card:hover { box-shadow: var(--shadow-hv); border-color: #ccc; }
+    .card-label {
+      font-family: var(--mono); font-size: 10.5px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--muted); margin: 0 0 14px;
+      padding-bottom: 11px; border-bottom: 1px solid var(--border);
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-family: var(--mono); font-size: 11px; color: var(--muted);
+      letter-spacing: 0.06em; text-transform: uppercase;
+      margin-bottom: 20px; transition: color 0.12s;
+    }
+    .back-link:hover { color: var(--text); text-decoration: none; }
+    .back-link::before { content: '←'; margin-right: 4px; }
+    .tag-heading {
+      font-family: var(--serif); font-size: 22px; font-weight: 600;
+      letter-spacing: -0.02em; margin: 0 0 4px; color: var(--text);
+    }
+    .tag-count { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.04em; }
+    .post-item { padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid var(--border); }
+    .post-item:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+    .post-title-h {
+      font-family: var(--serif); font-size: 17px; font-weight: 600;
+      line-height: 1.35; margin: 0 0 5px;
+    }
+    .post-title-h a { color: var(--text); }
+    .post-title-h a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .post-meta {
+      font-family: var(--mono); font-size: 11px; color: var(--muted);
+      letter-spacing: 0.04em; margin-bottom: 8px;
+    }
+    .post-summary { font-size: 13.5px; color: #444; margin: 0 0 10px; line-height: 1.65; }
+    .post-foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+    .tag-list { display: flex; gap: 5px; flex-wrap: wrap; }
+    .tag {
+      font-family: var(--mono); font-size: 10px; padding: 3px 7px;
+      background: var(--chip); border: 1px solid var(--border);
+      border-radius: 4px; color: var(--muted-dk); letter-spacing: 0.04em;
+      transition: background 0.12s, color 0.12s, border-color 0.12s;
+    }
+    .tag:hover { background: var(--text); color: #fff; border-color: var(--text); text-decoration: none; }
+    .read-more {
+      font-family: var(--mono); font-size: 11px; color: var(--text);
+      font-weight: 500; letter-spacing: 0.04em;
+    }
+    .read-more:hover { text-decoration: underline; }
+    .read-more::after { content: ' →'; }
+    .tags-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag-chip {
+      font-family: var(--mono); font-size: 12px;
+      padding: 6px 12px; background: var(--chip);
+      border: 1px solid var(--border); border-radius: 6px;
+      color: var(--muted-dk); letter-spacing: 0.04em;
+      transition: background 0.12s, color 0.12s, border-color 0.12s;
+    }
+    .tag-chip:hover { background: var(--text); color: #fff; border-color: var(--text); text-decoration: none; }
+    footer { padding: 13px 24px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+    .footer-text { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.04em; }
+    @media(max-width: 640px) {
+      .container { margin: 12px auto; padding: 0 12px; }
+      header.profile { padding: 20px 18px 16px; }
+      main { padding: 16px 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="window">
+
+      <div class="window-bar">
+        <div class="traffic-lights" aria-hidden="true">
+          <span class="light red"></span>
+          <span class="light yellow"></span>
+          <span class="light green"></span>
+        </div>
+        <span class="window-title">jarvis-wang.io / tags / rwd</span>
+        <nav class="window-nav">
+          <a href="https://LoveGPTAI.github.io/">首頁</a>
+          <a href="https://LoveGPTAI.github.io/about">關於</a>
+          <a href="https://LoveGPTAI.github.io/blog" class="active">部落格</a>
+        </nav>
+      </div>
+
+      <header class="profile">
+        <a href="https://LoveGPTAI.github.io/" class="avatar-wrap">
+          <img src="https://LoveGPTAI.github.io/images/logo.png" alt="Jarvis Wang" fetchpriority="high" loading="eager" decoding="async">
+        </a>
+        <div class="profile-text">
+          <h1><a href="https://LoveGPTAI.github.io/">Jarvis Wang</a></h1>
+          <p class="tagline">EDA · AI · 先進製程 · 投資思考</p>
+        </div>
+      </header>
+
+    <main>
+      <a class="back-link" href="https://LoveGPTAI.github.io/tags/">所有標籤</a>
+      <div class="card">
+        <h2 class="tag-heading">#RWD | Jarvis Wang&#39;s vibe 筆記</h2>
+        <div class="tag-count" style="margin-bottom:20px;">共 0 篇文章</div>
+              <p style="color:var(--muted);font-family:var(--mono);font-size:13px;">尚無文章。</p>
+      </div>
+    </main>
+
+      <footer>
+        <span class="footer-text">&copy; <span id="y"></span> Jarvis Wang &mdash; All Rights Reserved.</span>
+        <span class="footer-text">Taipei, Taiwan</span>
+      </footer>
+
+    </div>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
 </html>
