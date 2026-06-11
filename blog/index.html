@@ -1,261 +1,146 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Blog | Jarvis Wang's vibe 筆記</title>
+  <title>Research OS | Jarvis Wang — AI × EDA × Semiconductor</title>
   <link rel="icon" href="https://LoveGPTAI.github.io/images/logo.png" type="image/png">
   <link rel="apple-touch-icon" href="https://LoveGPTAI.github.io/images/logo.png">
-  <meta name="theme-color" content="#0d0d0d">
-  <meta name="description" content="文章列表">
+  <meta name="theme-color" content="#060a11">
+  <meta name="description" content="Jarvis Wang 的研究筆記已遷移至 Jarvis Research OS — AI × EDA × 半導體研究系統">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://LoveGPTAI.github.io/blog/">
   <meta property="og:site_name" content="Jarvis Wang's vibe 筆記">
-  <meta property="og:title" content="Blog | Jarvis Wang's vibe 筆記">
-  <meta property="og:description" content="文章列表">
+  <meta property="og:title" content="Research OS | Jarvis Wang — AI × EDA × Semiconductor">
+  <meta property="og:description" content="Jarvis Wang 的研究筆記已遷移至 Jarvis Research OS — AI × EDA × 半導體研究系統">
   <meta property="og:url" content="https://LoveGPTAI.github.io/blog/">
-  <meta property="og:type" content="article">
+  <meta property="og:type" content="website">
   <meta property="og:image" content="/images/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.css">
   <style>
-    :root {
-      --bg: #f0f0ec;
-      --card: #ffffff;
-      --text: #0d0d0d;
-      --muted: #909090;
-      --muted-dk: #555;
-      --border: #e2e2de;
-      --chip: #ececea;
-      --shadow-md: 0 4px 20px rgba(0,0,0,0.07), 0 0 0 1px rgba(0,0,0,0.04);
-      --shadow-hv: 0 8px 28px rgba(0,0,0,0.10), 0 0 0 1px rgba(0,0,0,0.05);
-      --mono: 'IBM Plex Mono', ui-monospace, monospace;
-      --sans: 'IBM Plex Sans', system-ui, sans-serif;
-      --serif: 'IBM Plex Serif', Georgia, serif;
-    }
-    *, *::before, *::after { box-sizing: border-box; }
-    html, body {
-      margin: 0; padding: 0;
-      background: var(--bg); color: var(--text);
-      font-family: var(--sans); font-size: 15px; line-height: 1.7;
-      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
-    }
-    a { color: var(--text); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .container { max-width: 1000px; margin: 32px auto; padding: 0 20px; }
-
-    /* Window */
-    .window {
-      background: var(--card); border: 1px solid #d4d4d0;
-      border-radius: 14px; box-shadow: var(--shadow-md); overflow: hidden;
-    }
-    .window-bar {
-      position: sticky; top: 0; z-index: 100;
-      display: flex; align-items: center; gap: 12px; padding: 11px 18px;
-      background: rgba(248,248,245,0.94);
-      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-    }
-    .traffic-lights { display: flex; gap: 7px; align-items: center; }
-    .light { width: 12px; height: 12px; border-radius: 50%; }
-    .light.red    { background: #ff5f57; box-shadow: inset 0 0 0 0.5px rgba(0,0,0,0.14); }
-    .light.yellow { background: #febc2e; box-shadow: inset 0 0 0 0.5px rgba(0,0,0,0.10); }
-    .light.green  { background: #28c840; box-shadow: inset 0 0 0 0.5px rgba(0,0,0,0.10); }
-    .window-title { font-family: var(--mono); font-size: 11.5px; color: var(--muted); letter-spacing: 0.01em; }
-    .window-nav { margin-left: auto; display: flex; gap: 2px; }
-    .window-nav a {
-      font-size: 13px; font-weight: 500; color: #555;
-      padding: 5px 11px; border-radius: 6px; letter-spacing: 0.01em;
-      transition: background 0.12s, color 0.12s;
-    }
-    .window-nav a:hover { background: var(--chip); color: var(--text); text-decoration: none; }
-    .window-nav a.active { background: var(--text); color: #fff; }
-
-    /* Profile */
-    header.profile {
-      display: flex; gap: 20px; align-items: flex-start;
-      padding: 26px 24px 20px; border-bottom: 1px solid var(--border);
-    }
-    .avatar-wrap {
-      flex-shrink: 0; width: 60px; height: 60px;
-      border-radius: 12px; overflow: hidden;
-      border: 1px solid var(--border); background: #f5f5f3;
-    }
-    .avatar-wrap img { width: 100%; height: 100%; object-fit: contain; display: block; background: white; }
-    .profile-text { flex: 1; }
-    .profile-text h1 {
-      margin: 0 0 3px; font-family: var(--serif);
-      font-size: 23px; font-weight: 600;
-      letter-spacing: -0.02em; color: var(--text); line-height: 1.2;
-    }
-    .profile-text h1 a { color: inherit; }
-    .profile-text h1 a:hover { text-decoration: none; }
-    .profile-text .tagline {
-      font-size: 13px; color: var(--muted); font-family: var(--mono);
-      letter-spacing: 0.02em; margin: 0;
-    }
-
-    /* Main */
-    main { padding: 24px; }
-    .layout { display: grid; grid-template-columns: 1fr; gap: 20px; }
-    @media(min-width: 860px) {
-      .layout { grid-template-columns: 1.9fr 1fr; }
-      .sidebar { position: sticky; top: 54px; height: fit-content; display: flex; flex-direction: column; gap: 16px; }
-    }
-
-    /* Cards */
-    .card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 12px; padding: 20px;
-      transition: box-shadow 0.18s, border-color 0.18s;
-    }
-    .main-col .card + .card { margin-top: 16px; }
-    .card:hover { box-shadow: var(--shadow-hv); border-color: #ccc; }
-    .card-label {
-      font-family: var(--mono); font-size: 10.5px;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--muted); margin: 0 0 14px;
-      padding-bottom: 11px; border-bottom: 1px solid var(--border);
-    }
-
-    /* Post Items */
-    .post-item { padding-bottom: 22px; margin-bottom: 22px; border-bottom: 1px solid var(--border); }
-    .post-item:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
-    .post-title-h {
-      font-family: var(--serif); font-size: 17px; font-weight: 600;
-      line-height: 1.35; margin: 0 0 5px;
-    }
-    .post-title-h a { color: var(--text); }
-    .post-title-h a:hover { text-decoration: underline; text-underline-offset: 3px; }
-    .post-meta {
-      font-family: var(--mono); font-size: 11px; color: var(--muted);
-      letter-spacing: 0.04em; margin-bottom: 8px;
-    }
-    .post-summary { font-size: 13.5px; color: #444; margin: 0 0 12px; line-height: 1.65; }
-    .post-foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
-    .tag-list { display: flex; gap: 5px; flex-wrap: wrap; }
-    .tag {
-      font-family: var(--mono); font-size: 10px; padding: 3px 7px;
-      background: var(--chip); border: 1px solid var(--border);
-      border-radius: 4px; color: var(--muted-dk); letter-spacing: 0.04em;
-      transition: background 0.12s, color 0.12s, border-color 0.12s;
-    }
-    .tag:hover { background: var(--text); color: #fff; border-color: var(--text); text-decoration: none; }
-    .read-more {
-      font-family: var(--mono); font-size: 11px; color: var(--text);
-      font-weight: 500; letter-spacing: 0.04em;
-    }
-    .read-more:hover { text-decoration: underline; }
-    .read-more::after { content: ' →'; }
-
-    /* Sidebar */
-    .contact-link {
-      display: flex; align-items: center; gap: 9px;
-      padding: 10px 13px; border: 1px solid var(--border); border-radius: 10px;
-      font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 8px;
-      transition: background 0.12s, border-color 0.12s, color 0.12s;
-    }
-    .contact-link:last-child { margin-bottom: 0; }
-    .contact-link:hover { background: var(--text); color: #fff; border-color: var(--text); text-decoration: none; }
-    .contact-icon { font-size: 13px; font-family: var(--mono); color: var(--muted); }
-    .contact-link:hover .contact-icon { color: rgba(255,255,255,0.6); }
-
-    .about-img { width: 100%; height: auto; border-radius: 10px; display: block; }
-
-    /* Footer */
-    footer { padding: 13px 24px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
-    .footer-text { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.04em; }
-
-    @media(max-width: 640px) {
-      .container { margin: 12px auto; padding: 0 12px; }
-      header.profile { padding: 20px 18px 16px; }
-      main { padding: 16px 18px; }
-    }
+    .hero.compact { padding: 28px 30px 24px; }
+    .hero.compact .hero-name { font-size: clamp(28px, 5vw, 38px); }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="window">
+    <div class="frame">
 
-      <div class="window-bar">
-        <div class="traffic-lights" aria-hidden="true">
-          <span class="light red"></span>
-          <span class="light yellow"></span>
-          <span class="light green"></span>
+      <div class="chrome">
+        <div class="layers" aria-hidden="true">
+          <span class="layer-chip m1"></span>
+          <span class="layer-chip via"></span>
+          <span class="layer-chip poly"></span>
         </div>
-        <span class="window-title">jarvis-wang.io / blog</span>
-        <nav class="window-nav">
+        <span class="chrome-title"><b>jarvis_wang.gds</b> — layout viewer — cell: IO_PAD / RESEARCH_OS</span>
+        <nav class="chrome-nav">
           <a href="https://LoveGPTAI.github.io/">首頁</a>
           <a href="https://LoveGPTAI.github.io/about">關於</a>
           <a href="https://LoveGPTAI.github.io/blog" class="active">部落格</a>
         </nav>
       </div>
+      <div class="ruler" aria-hidden="true"></div>
 
-      <header class="profile">
-        <a href="https://LoveGPTAI.github.io/" class="avatar-wrap">
-          <img src="https://LoveGPTAI.github.io/images/logo.png" alt="Jarvis Wang" fetchpriority="high" loading="eager" decoding="async">
-        </a>
-        <div class="profile-text">
-          <h1><a href="https://LoveGPTAI.github.io/">Jarvis Wang</a></h1>
-          <p class="tagline">EDA · AI · 先進製程 · 投資思考</p>
+      <header class="hero compact">
+        <div class="hero-id">
+          <p class="hero-boot">io_pad.cell — bond wire to external die</p>
+          <h1 class="hero-name">Research <span class="glow">OS</span></h1>
+          <p class="hero-cmd">route signal → prdhome.vercel.app<span class="cursor" aria-hidden="true"></span></p>
+          <div class="hero-badges">
+            <span class="badge-live">New posts ship there</span>
+            <span class="badge-node">◈ AI-Native Research</span>
+          </div>
         </div>
+        <svg class="hero-traces" width="340" height="180" viewBox="0 0 340 180" aria-hidden="true">
+          <path class="trace"    d="M340 24 H236 l-20 20 V92 H146 l-18 18 V158 H56"/>
+          <path class="trace t2" d="M340 60 H266 l-16 16 V120 h-76 l-12 12 v36"/>
+          <circle class="via-dot"   cx="56"  cy="158" r="4"/>
+          <circle class="via-dot a" cx="162" cy="168" r="4"/>
+        </svg>
       </header>
 
       <main>
-        <div class="layout">
+        <div class="article-wrap">
 
-          <div class="main-col">
-            <div class="card">
-              <p class="card-label">所有文章</p>
+          <div class="migrate-note" style="margin-bottom:20px;">
+            ⚠ 研究筆記已遷移 — 新文章全數發布於 <a href="https://prdhome.vercel.app" target="_blank" rel="noopener">Jarvis Research OS</a>，本站專注履歷展示。
+          </div>
 
-              <div class="post-item">
-                <h2 class="post-title-h">
-                  <a href="https://LoveGPTAI.github.io/blog/2025-09-09-ai-llm-vibe-coding/">啟程：AI LLM Vibe Coding 與我的 EDA 筆記</a>
-                </h2>
-                <div class="post-meta">2025-09-09 &middot; 1 min read</div>
-                <p class="post-summary">建立這個部落格，是我想留下自己在 EDA 產業、AI 大語言模型（LLM）、以及個人 vibe-coding 之路的軌跡。記錄觀點、實驗與思考的空間。</p>
-                <div class="post-foot">
-                  <div class="tag-list">
-                    <a class="tag" href="https://LoveGPTAI.github.io/tags/ai/">#AI</a>
-                    <a class="tag" href="https://LoveGPTAI.github.io/tags/eda/">#EDA</a>
-                    <a class="tag" href="https://LoveGPTAI.github.io/tags/vibe-coding/">#Vibe Coding</a>
-                    <a class="tag" href="https://LoveGPTAI.github.io/tags/personal/">#Personal</a>
-                  </div>
-                  <a class="read-more" href="https://LoveGPTAI.github.io/blog/2025-09-09-ai-llm-vibe-coding/">Read more</a>
-                </div>
-              </div>
+          <div class="card">
+            <p class="card-label"><span class="idx">[01]</span> Jarvis Research OS</p>
+            <div class="intro-text" style="margin-bottom:20px;">
+              <p>
+                <strong>Jarvis Research OS</strong> 是我的 AI 原生研究系統 —
+                <span class="hl">真實閱讀、AI 整理、人類判斷</span>，
+                把對 AI × EDA × 半導體的深度研究，沉澱成可搜尋、可發布、可複利的知識資產。
+              </p>
+            </div>
+            <a class="portal-btn" href="https://prdhome.vercel.app" target="_blank" rel="noopener">
+              進入 Jarvis Research OS <span class="arr">↗</span>
+            </a>
+            <p class="portal-sub">prdhome.vercel.app — 真實閱讀 · AI 整理 · 人類判斷</p>
+          </div>
 
+          <div class="card" style="margin-top:18px;">
+            <p class="card-label"><span class="idx">[02]</span> Research Domains</p>
+            <div class="domain-grid">
+              <a class="domain-item" href="https://prdhome.vercel.app" target="_blank" rel="noopener">
+                <div class="domain-name"><span class="layer-key m1"></span>Engineering</div>
+                <div class="domain-desc">AI × EDA × 半導體的交匯點 — 工具、流程與先進製程的工程實務。</div>
+              </a>
+              <a class="domain-item" href="https://prdhome.vercel.app" target="_blank" rel="noopener">
+                <div class="domain-name"><span class="layer-key via"></span>Workflow</div>
+                <div class="domain-desc">AI Agent 與多代理執行系統的實戰筆記 — Claude Code、MCP、自動化。</div>
+              </a>
+              <a class="domain-item" href="https://prdhome.vercel.app" target="_blank" rel="noopener">
+                <div class="domain-name"><span class="layer-key poly"></span>Research</div>
+                <div class="domain-desc">半導體投資研究與供應鏈分析 — 產業脈絡與價值捕獲。</div>
+              </a>
+              <a class="domain-item" href="https://prdhome.vercel.app" target="_blank" rel="noopener">
+                <div class="domain-name"><span class="layer-key diff"></span>Systems</div>
+                <div class="domain-desc">把知識轉化為可複用資產的第二大腦系統 — Obsidian 與知識複利。</div>
+              </a>
             </div>
           </div>
 
-          <aside class="sidebar">
+          <div class="card" style="margin-top:18px;">
+            <p class="card-label"><span class="idx">[03]</span> 站內存檔</p>
 
-            <div class="card">
-              <p class="card-label">About</p>
-              <img class="about-img" src="https://LoveGPTAI.github.io/images/AboutMe.png" alt="About Me" loading="lazy" decoding="async">
+            <div class="post-item">
+              <h2 class="post-title-h">
+                <a href="https://LoveGPTAI.github.io/blog/2025-09-09-ai-llm-vibe-coding/">啟程：AI LLM Vibe Coding 與我的 EDA 筆記</a>
+              </h2>
+              <div class="post-meta">2025-09-09 · 1 min read</div>
+              <p class="post-summary">建立這個部落格，是我想留下自己在 EDA 產業、AI 大語言模型（LLM）、以及個人 vibe-coding 之路的軌跡。記錄觀點、實驗與思考的空間。</p>
+              <div class="post-foot">
+                <div class="tag-list">
+                  <a class="tag" href="https://LoveGPTAI.github.io/tags/ai/">#AI</a>
+                  <a class="tag" href="https://LoveGPTAI.github.io/tags/eda/">#EDA</a>
+                  <a class="tag" href="https://LoveGPTAI.github.io/tags/vibe-coding/">#Vibe Coding</a>
+                  <a class="tag" href="https://LoveGPTAI.github.io/tags/personal/">#Personal</a>
+                </div>
+                <a class="read-more" href="https://LoveGPTAI.github.io/blog/2025-09-09-ai-llm-vibe-coding/">Read more</a>
+              </div>
             </div>
 
-            <div class="card">
-              <p class="card-label">Links</p>
-              <a class="contact-link" href="https://LoveGPTAI.github.io/about">
-                <span class="contact-icon">↗</span>
-                完整履歷
-              </a>
-              <a class="contact-link" href="https://www.linkedin.com/in/jamchingw/" target="_blank" rel="noopener">
-                <span class="contact-icon">in</span>
-                LinkedIn
-              </a>
-            </div>
+          </div>
 
-          </aside>
         </div>
       </main>
 
-      <footer>
-        <span class="footer-text">&copy; <span id="y"></span> Jarvis Wang &mdash; All Rights Reserved.</span>
-        <span class="footer-text">Taipei, Taiwan</span>
+      <footer class="statusbar">
+        <div class="status-group">
+          <span class="status-item">DRC: <b>0 errors</b></span>
+          <span class="status-item">LVS: <b>clean</b></span>
+          <span class="status-item"><span class="amber">io_pad: bonded</span></span>
+        </div>
+        <div class="status-group">
+          <span class="status-item">&copy; <span id="y"></span> Jarvis Wang</span>
+          <span class="status-item">25.03°N 121.56°E · TAIPEI</span>
+        </div>
       </footer>
 
     </div>

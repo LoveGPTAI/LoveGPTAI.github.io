@@ -1,245 +1,49 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>啟程：AI LLM Vibe Coding 與我的 EDA 筆記 | Jarvis Wang's vibe 筆記</title>
   <link rel="icon" href="https://LoveGPTAI.github.io/images/logo.png" type="image/png">
   <link rel="apple-touch-icon" href="https://LoveGPTAI.github.io/images/logo.png">
-  <meta name="theme-color" content="#0d0d0d">
-  <meta name="description" content="Jarvis Wang 的個人網站與技術部落格">
+  <meta name="theme-color" content="#060a11">
+  <meta name="description" content="建立這個部落格，是我想留下自己在 EDA 產業、AI 大語言模型（LLM）、以及個人 vibe-coding 之路的軌跡。">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://LoveGPTAI.github.io/blog/2025-09-09-ai-llm-vibe-coding/">
   <meta property="og:site_name" content="Jarvis Wang's vibe 筆記">
   <meta property="og:title" content="啟程：AI LLM Vibe Coding 與我的 EDA 筆記 | Jarvis Wang's vibe 筆記">
-  <meta property="og:description" content="Jarvis Wang 的個人網站與技術部落格">
+  <meta property="og:description" content="建立這個部落格，是我想留下自己在 EDA 產業、AI 大語言模型（LLM）、以及個人 vibe-coding 之路的軌跡。">
   <meta property="og:url" content="https://LoveGPTAI.github.io/blog/2025-09-09-ai-llm-vibe-coding/">
   <meta property="og:type" content="article">
   <meta property="og:image" content="/images/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #f0f0ec;
-      --card: #ffffff;
-      --text: #0d0d0d;
-      --muted: #909090;
-      --muted-dk: #555;
-      --border: #e2e2de;
-      --chip: #ececea;
-      --shadow-md: 0 4px 20px rgba(0,0,0,0.07), 0 0 0 1px rgba(0,0,0,0.04);
-      --mono: 'IBM Plex Mono', ui-monospace, monospace;
-      --sans: 'IBM Plex Sans', system-ui, sans-serif;
-      --serif: 'IBM Plex Serif', Georgia, serif;
-    }
-    *, *::before, *::after { box-sizing: border-box; }
-    html, body {
-      margin: 0; padding: 0;
-      background: var(--bg); color: var(--text);
-      font-family: var(--sans); font-size: 15px; line-height: 1.7;
-      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
-    }
-    a { color: var(--text); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .container { max-width: 1000px; margin: 32px auto; padding: 0 20px; }
-
-    /* Window */
-    .window {
-      background: var(--card); border: 1px solid #d4d4d0;
-      border-radius: 14px; box-shadow: var(--shadow-md); overflow: hidden;
-    }
-    .window-bar {
-      position: sticky; top: 0; z-index: 100;
-      display: flex; align-items: center; gap: 12px; padding: 11px 18px;
-      background: rgba(248,248,245,0.94);
-      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-    }
-    .traffic-lights { display: flex; gap: 7px; align-items: center; }
-    .light { width: 12px; height: 12px; border-radius: 50%; }
-    .light.red    { background: #ff5f57; box-shadow: inset 0 0 0 0.5px rgba(0,0,0,0.14); }
-    .light.yellow { background: #febc2e; box-shadow: inset 0 0 0 0.5px rgba(0,0,0,0.10); }
-    .light.green  { background: #28c840; box-shadow: inset 0 0 0 0.5px rgba(0,0,0,0.10); }
-    .window-title { font-family: var(--mono); font-size: 11.5px; color: var(--muted); letter-spacing: 0.01em; }
-    .window-nav { margin-left: auto; display: flex; gap: 2px; }
-    .window-nav a {
-      font-size: 13px; font-weight: 500; color: #555;
-      padding: 5px 11px; border-radius: 6px; letter-spacing: 0.01em;
-      transition: background 0.12s, color 0.12s;
-    }
-    .window-nav a:hover { background: var(--chip); color: var(--text); text-decoration: none; }
-    .window-nav a.active { background: var(--text); color: #fff; }
-
-    /* Profile header */
-    header.profile {
-      display: flex; gap: 20px; align-items: flex-start;
-      padding: 26px 24px 20px; border-bottom: 1px solid var(--border);
-    }
-    .avatar-wrap {
-      flex-shrink: 0; width: 60px; height: 60px;
-      border-radius: 12px; overflow: hidden;
-      border: 1px solid var(--border); background: #f5f5f3;
-    }
-    .avatar-wrap img { width: 100%; height: 100%; object-fit: contain; display: block; background: white; }
-    .profile-text { flex: 1; }
-    .profile-text h1 {
-      margin: 0 0 3px; font-family: var(--serif);
-      font-size: 23px; font-weight: 600;
-      letter-spacing: -0.02em; color: var(--text); line-height: 1.2;
-    }
-    .profile-text h1 a { color: inherit; }
-    .profile-text h1 a:hover { text-decoration: none; }
-    .profile-text .tagline {
-      font-size: 13px; color: var(--muted); font-family: var(--mono);
-      letter-spacing: 0.02em; margin: 0;
-    }
-
-    /* Article layout */
-    main { padding: 24px; }
-    .article-wrap {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    /* Back link */
-    .back-link {
-      display: inline-flex; align-items: center; gap: 5px;
-      font-family: var(--mono); font-size: 11px; color: var(--muted);
-      letter-spacing: 0.06em; text-transform: uppercase;
-      margin-bottom: 24px;
-      transition: color 0.12s;
-    }
-    .back-link:hover { color: var(--text); text-decoration: none; }
-    .back-link::before { content: '←'; }
-
-    /* Article header */
-    .article-header { margin-bottom: 28px; }
-    .article-title {
-      font-family: var(--serif);
-      font-size: 30px; font-weight: 600;
-      letter-spacing: -0.02em; line-height: 1.25;
-      color: var(--text); margin: 0 0 14px;
-    }
-    .article-meta {
-      display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
-      font-family: var(--mono); font-size: 11px;
-      color: var(--muted); letter-spacing: 0.04em;
-    }
-    .article-meta .sep { color: var(--border); }
-    .tag-list { display: flex; gap: 5px; flex-wrap: wrap; margin-top: 12px; }
-    .tag {
-      font-family: var(--mono); font-size: 10px; padding: 3px 7px;
-      background: var(--chip); border: 1px solid var(--border);
-      border-radius: 4px; color: var(--muted-dk); letter-spacing: 0.04em;
-      transition: background 0.12s, color 0.12s, border-color 0.12s;
-    }
-    .tag:hover { background: var(--text); color: #fff; border-color: var(--text); text-decoration: none; }
-
-    /* Divider */
-    .article-divider {
-      border: none; border-top: 1px solid var(--border);
-      margin: 24px 0;
-    }
-
-    /* Article body */
-    .post-content {
-      font-size: 15px; line-height: 1.8; color: #1a1a1a;
-    }
-    .post-content h1 {
-      font-family: var(--serif); font-size: 24px; font-weight: 600;
-      letter-spacing: -0.02em; color: var(--text);
-      margin: 32px 0 12px; line-height: 1.3;
-    }
-    .post-content h2 {
-      font-family: var(--serif); font-size: 19px; font-weight: 600;
-      letter-spacing: -0.01em; color: var(--text);
-      margin: 28px 0 10px; line-height: 1.35;
-    }
-    .post-content h3 {
-      font-family: var(--sans); font-size: 16px; font-weight: 600;
-      color: var(--text); margin: 22px 0 8px;
-    }
-    .post-content p { margin: 0 0 14px; }
-    .post-content p:last-child { margin-bottom: 0; }
-    .post-content strong { font-weight: 600; color: var(--text); }
-    .post-content a { text-decoration: underline; text-underline-offset: 2px; color: var(--text); }
-    .post-content a:hover { opacity: 0.7; }
-    .post-content ul, .post-content ol {
-      margin: 0 0 14px; padding-left: 20px;
-    }
-    .post-content li { margin-bottom: 5px; }
-    .post-content img { max-width: 100%; border-radius: 10px; display: block; margin: 20px 0; }
-    .post-content hr {
-      border: none; border-top: 1px solid var(--border);
-      margin: 28px 0;
-    }
-    .post-content blockquote {
-      margin: 20px 0; padding: 14px 18px;
-      border-left: 3px solid var(--text);
-      background: var(--chip); border-radius: 0 8px 8px 0;
-      font-style: italic; color: #444;
-    }
-    pre, code { font-family: var(--mono); }
-    pre {
-      background: #111; color: #f0f0f0;
-      border-radius: 8px; padding: 16px;
-      overflow: auto; font-size: 13px; margin: 16px 0;
-    }
-    code {
-      background: var(--chip); border: 1px solid var(--border);
-      border-radius: 4px; padding: 0.1em 0.35em; font-size: 0.9em;
-    }
-    pre code { background: none; border: none; padding: 0; font-size: inherit; color: inherit; }
-    table { border-collapse: collapse; width: 100%; margin: 16px 0; }
-    th, td { border: 1px solid var(--border); padding: 8px 12px; font-size: 14px; }
-    th { background: var(--chip); text-align: left; font-weight: 600; }
-
-    /* Footer */
-    footer { padding: 13px 24px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
-    .footer-text { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.04em; }
-
-    @media(max-width: 640px) {
-      .container { margin: 12px auto; padding: 0 12px; }
-      header.profile { padding: 20px 18px 16px; }
-      main { padding: 16px 18px; }
-      .article-title { font-size: 24px; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.css">
 </head>
 <body>
   <div class="container">
-    <div class="window">
+    <div class="frame">
 
-      <div class="window-bar">
-        <div class="traffic-lights" aria-hidden="true">
-          <span class="light red"></span>
-          <span class="light yellow"></span>
-          <span class="light green"></span>
+      <div class="chrome">
+        <div class="layers" aria-hidden="true">
+          <span class="layer-chip m1"></span>
+          <span class="layer-chip via"></span>
+          <span class="layer-chip poly"></span>
         </div>
-        <span class="window-title">jarvis-wang.io / blog</span>
-        <nav class="window-nav">
+        <span class="chrome-title"><b>jarvis_wang.gds</b> — layout viewer — cell: BLOG / 2025-09-09</span>
+        <nav class="chrome-nav">
           <a href="https://LoveGPTAI.github.io/">首頁</a>
           <a href="https://LoveGPTAI.github.io/about">關於</a>
           <a href="https://LoveGPTAI.github.io/blog" class="active">部落格</a>
         </nav>
       </div>
-
-      <header class="profile">
-        <a href="https://LoveGPTAI.github.io/" class="avatar-wrap">
-          <img src="https://LoveGPTAI.github.io/images/logo.png" alt="Jarvis Wang" fetchpriority="high" loading="eager" decoding="async">
-        </a>
-        <div class="profile-text">
-          <h1><a href="https://LoveGPTAI.github.io/">Jarvis Wang</a></h1>
-          <p class="tagline">EDA · AI · 先進製程 · 投資思考</p>
-        </div>
-      </header>
+      <div class="ruler" aria-hidden="true"></div>
 
       <main>
         <div class="article-wrap">
 
-          <a class="back-link" href="https://LoveGPTAI.github.io/blog"> 所有文章</a>
+          <a class="back-link" href="https://LoveGPTAI.github.io/blog">所有文章</a>
 
           <div class="article-header">
             <h1 class="article-title">啟程：AI LLM Vibe Coding 與我的 EDA 筆記</h1>
@@ -332,9 +136,16 @@
         </div>
       </main>
 
-      <footer>
-        <span class="footer-text">&copy; <span id="y"></span> Jarvis Wang &mdash; All Rights Reserved.</span>
-        <span class="footer-text">Taipei, Taiwan</span>
+      <footer class="statusbar">
+        <div class="status-group">
+          <span class="status-item">DRC: <b>0 errors</b></span>
+          <span class="status-item">LVS: <b>clean</b></span>
+          <span class="status-item"><span class="amber">grid 0.001µ</span></span>
+        </div>
+        <div class="status-group">
+          <span class="status-item">&copy; <span id="y"></span> Jarvis Wang</span>
+          <span class="status-item">25.03°N 121.56°E · TAIPEI</span>
+        </div>
       </footer>
 
     </div>
