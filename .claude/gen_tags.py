@@ -5,20 +5,22 @@ import os, urllib.parse
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 POST = {
-    "url": "https://LoveGPTAI.github.io/blog/2025-09-09-ai-llm-vibe-coding/",
-    "title": "啟程：AI LLM Vibe Coding 與我的 EDA 筆記",
-    "date": "2025-09-09",
-    "read": "1 min read",
-    "summary": "建立這個部落格，是我想留下自己在 EDA 產業、AI 大語言模型（LLM）、以及個人 vibe-coding 之路的軌跡。記錄觀點、實驗與思考的空間。",
-    "tags": [("AI", "ai"), ("EDA", "eda"), ("Vibe Coding", "vibe-coding"), ("Personal", "personal")],
+    "url": "https://LoveGPTAI.github.io/blog/2026-06-21-ai-eda-foundry-flow-silicon-feedback/",
+    "title": "從 RFIC 工程師到 AI-native EDA Workflow Architect：我貫穿半導體設計、量產與工具鏈的全端主線",
+    "date": "2026-06-21",
+    "read": "5 min read",
+    "summary": "16 年來換過 5 個職稱、4 家公司，但拆開每一段轉換的接點，其實一直在貫穿半導體從電路設計、量產測試、良率診斷到 EDA 工具鏈的全端業務。",
+    "tags": [("AI", "ai"), ("EDA", "eda"), ("Career", "career"), ("Foundry Flow", "foundry-flow")],
 }
 
 # slug -> (display name, has_post)
 TAGS = {
     "ai": ("AI", True),
     "eda": ("EDA", True),
-    "vibe-coding": ("Vibe Coding", True),
-    "personal": ("Personal", True),
+    "career": ("Career", True),
+    "foundry-flow": ("Foundry Flow", True),
+    "vibe-coding": ("Vibe Coding", False),
+    "personal": ("Personal", False),
     "半導體": ("半導體", False),
     "雲端": ("雲端", False),
     "前端工程": ("前端工程", False),

@@ -1,11 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI on Jarvis Wang's vibe 筆記</title><link>https://LoveGPTAI.github.io/tags/ai/</link><description>Recent content in AI on Jarvis Wang's vibe 筆記</description><generator>Hugo</generator><language>zh-TW</language><lastBuildDate>Tue, 09 Sep 2025 22:30:00 +0800</lastBuildDate><atom:link href="https://LoveGPTAI.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml"/><item><title>啟程：AI LLM Vibe Coding 與我的 EDA 筆記</title><link>https://LoveGPTAI.github.io/blog/2025-09-09-ai-llm-vibe-coding/</link><pubDate>Tue, 09 Sep 2025 22:30:00 +0800</pubDate><guid>https://LoveGPTAI.github.io/blog/2025-09-09-ai-llm-vibe-coding/</guid><description>&lt;h1 id="啟程ai-llm-vibe-coding-與我的-eda-筆記">啟程：AI LLM Vibe Coding 與我的 EDA 筆記&lt;/h1>
-&lt;p>建立這個部落格，是我想留下自己在 &lt;strong>EDA 產業、AI 大語言模型（LLM）、以及個人 vibe-coding 之路&lt;/strong>的軌跡。&lt;br>
-我希望它不只是一個技術筆記本，更能成為一個結合觀點、實驗與思考的空間。&lt;/p>
-&lt;hr>
-&lt;h2 id="為什麼開始寫">為什麼開始寫？&lt;/h2>
-&lt;p>✓ &lt;strong>AI 正在改變一切&lt;/strong>&lt;br>
-◻︎ 從程式設計、知識檢索，到數位分身與自動化，AI 已經成為日常工作流的一部分。&lt;br>
-◻︎ 對我而言，AI 並非只是工具，而是 &lt;strong>與我並肩的共創夥伴&lt;/strong>。&lt;/p>
-&lt;p>✓ &lt;strong>EDA 產業的轉折點&lt;/strong>&lt;br>
-◻︎ 從 Cadence 收購 Hexagon D&amp;amp;E，到 TSMC 的先進封裝與測試挑戰，產業正快速重組。&lt;br>
-◻︎ 我希望用這裡，紀錄並分析這些事件背後的脈絡。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>AI on Jarvis Wang's vibe 筆記</title><link>https://LoveGPTAI.github.io/tags/ai/</link><description>Recent content in AI on Jarvis Wang's vibe 筆記</description><generator>Hugo</generator><language>zh-TW</language><lastBuildDate>Sun, 21 Jun 2026 12:00:00 +0800</lastBuildDate><atom:link href="https://LoveGPTAI.github.io/tags/ai/index.xml" rel="self" type="application/rss+xml"/><item><title>從 RFIC 工程師到 AI-native EDA Workflow Architect：我貫穿半導體設計、量產與工具鏈的全端主線</title><link>https://LoveGPTAI.github.io/blog/2026-06-21-ai-eda-foundry-flow-silicon-feedback/</link><pubDate>Sun, 21 Jun 2026 12:00:00 +0800</pubDate><guid>https://LoveGPTAI.github.io/blog/2026-06-21-ai-eda-foundry-flow-silicon-feedback/</guid><description>&lt;h1 id=&quot;從-rfic-工程師到-ai-native-eda-workflow-architect&quot;&gt;從 RFIC 工程師到 AI-native EDA Workflow Architect：我貫穿半導體設計、量產與工具鏈的全端主線&lt;/h1&gt;
+&lt;p&gt;履歷上看，我的職涯像是換了好幾次跑道：工研院做 RFIC，ALi 做 mixed-signal IP，台積電先做 ATE 測試開發，再轉做量產診斷，後來又轉去做 advanced-node CAD flow，現在在 Cadence。如果只看職稱，很容易被解讀成「一個人還沒定下來，一直在換領域」。&lt;br&gt;
+但如果把每一段轉換的「接點」連起來看，我發現自己其實一直在貫穿同一條鏈：半導體從電路設計、晶圓量產、良率診斷到 EDA 工具鏈的全端業務。&lt;/p&gt;
+&lt;h2 id=&quot;證據鏈從電路設計到-eda-platform貫穿半導體全端&quot;&gt;證據鏈：從電路設計到 EDA Platform，貫穿半導體全端&lt;/h2&gt;
+&lt;p&gt;RFIC / Analog IC Design → Mixed-Signal IP Integration → ATE CP / FT Test Program Development → Product Diagnosis / Yield Learning → Advanced-Node CAD Flow / EDA Ecosystem——我是少數能完整貫穿「設計、製造、量產、工具」四個斷面的人。&lt;/p&gt;
+</description></item></channel></rss>

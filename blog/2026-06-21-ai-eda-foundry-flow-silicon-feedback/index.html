@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>從 RFIC 工程師到 AI-native EDA Workflow Architect：我貫穿半導體設計、量產與工具鏈的全端主線 | Jarvis Wang's vibe 筆記</title>
+  <link rel="icon" href="https://LoveGPTAI.github.io/images/logo.png" type="image/png">
+  <link rel="apple-touch-icon" href="https://LoveGPTAI.github.io/images/logo.png">
+  <meta name="theme-color" content="#060a11">
+  <meta name="description" content="16 年來換過 5 個職稱、4 家公司，但拆開每一段轉換的接點，其實一直在貫穿半導體從電路設計、量產測試、良率診斷到 EDA 工具鏈的全端業務。">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://LoveGPTAI.github.io/blog/2026-06-21-ai-eda-foundry-flow-silicon-feedback/">
+  <meta property="og:site_name" content="Jarvis Wang's vibe 筆記">
+  <meta property="og:title" content="從 RFIC 工程師到 AI-native EDA Workflow Architect：我貫穿半導體設計、量產與工具鏈的全端主線 | Jarvis Wang's vibe 筆記">
+  <meta property="og:description" content="16 年來換過 5 個職稱、4 家公司，但拆開每一段轉換的接點，其實一直在貫穿半導體從電路設計、量產測試、良率診斷到 EDA 工具鏈的全端業務。">
+  <meta property="og:url" content="https://LoveGPTAI.github.io/blog/2026-06-21-ai-eda-foundry-flow-silicon-feedback/">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <div class="container">
+    <div class="frame">
+
+      <div class="chrome">
+        <div class="layers" aria-hidden="true">
+          <span class="layer-chip m1"></span>
+          <span class="layer-chip via"></span>
+          <span class="layer-chip poly"></span>
+        </div>
+        <span class="chrome-title"><b>jarvis_wang.gds</b> — layout viewer — cell: BLOG / 2026-06-21</span>
+        <nav class="chrome-nav">
+          <a href="https://LoveGPTAI.github.io/">首頁</a>
+          <a href="https://LoveGPTAI.github.io/about">關於</a>
+          <a href="https://LoveGPTAI.github.io/blog" class="active">部落格</a>
+        </nav>
+      </div>
+      <div class="ruler" aria-hidden="true"></div>
+
+      <main>
+        <div class="article-wrap">
+
+          <a class="back-link" href="https://LoveGPTAI.github.io/blog">所有文章</a>
+
+          <div class="article-header">
+            <h1 class="article-title">從 RFIC 工程師到 AI-native EDA Workflow Architect：我貫穿半導體設計、量產與工具鏈的全端主線</h1>
+            <div class="article-meta">
+              <span>2026-06-21</span>
+              <span class="sep">|</span>
+              <span>5 min read</span>
+            </div>
+            <div class="tag-list">
+              <a class="tag" href="https://LoveGPTAI.github.io/tags/ai/">#AI</a>
+              <a class="tag" href="https://LoveGPTAI.github.io/tags/eda/">#EDA</a>
+              <a class="tag" href="https://LoveGPTAI.github.io/tags/career/">#Career</a>
+              <a class="tag" href="https://LoveGPTAI.github.io/tags/foundry-flow/">#Foundry Flow</a>
+            </div>
+          </div>
+
+          <hr class="article-divider">
+
+          <div class="post-content">
+            <p>履歷上看，我的職涯像是換了好幾次跑道：工研院做 RFIC，ALi 做 mixed-signal IP，台積電先做 ATE 測試開發，再轉做量產診斷，後來又轉去做 advanced-node CAD flow，現在在 Cadence。如果只看職稱，很容易被解讀成「一個人還沒定下來，一直在換領域」。</p>
+
+            <p>但如果把每一段轉換的「接點」連起來看，我發現自己其實一直在貫穿同一條鏈：</p>
+
+            <blockquote>半導體從電路設計、晶圓量產、良率診斷到 EDA 工具鏈的全端業務——這條鏈中間斷掉的因果關係，我能不能把它接回去？</blockquote>
+
+            <p>這篇文章想做的，不是寫一份職涯回顧文，而是把這條全端主線講清楚——順便回答一個我自己也在問的問題：下一步，我該往哪裡走。</p>
+
+            <h2>證據鏈：從電路設計到 EDA Platform，貫穿半導體全端</h2>
+
+            <p>把過去 16 年的工作攤開，會看到一條清楚的能力上移路徑：RFIC / Analog IC Design → Mixed-Signal IP Integration → ATE CP / FT Test Program Development → Product Diagnosis / Yield Learning → Advanced-Node CAD Flow / EDA Ecosystem。</p>
+
+            <p><strong>工研院（RFIC、Analog Baseband、Power IC）</strong>：這段建立的不是電路技能，而是「把模糊現象轉成可分析、可驗證問題」的方法論。VCO、PLL、frequency synthesizer 的 simulation-measurement 閉環，逼著我學會用證據說話，而不是用直覺猜答案。</p>
+
+            <p><strong>ALi（Mixed-Signal IC、Clocking IP）</strong>：把單顆電路的能力延伸成「可整合、可交付」的 IP——我第一次理解，工程師的價值不只在電路本身，還在於能不能讓別人放心拿去用。</p>
+
+            <p><strong>台積電 TPDD（Test Program Development，約 1.5 年）</strong>：這是我第一次站進量產現場。負責 ATE CP / FT 測試開發，把設計端的規格轉成可在 tester 上實際執行、可重複、可量產的測試程式。這段經驗讓我第一次理解「設計圖紙」和「真正能在量產線上跑起來的測試」之間，中間還隔著一整層工程——而這層工程，正是後來我能看懂 diagnosis、yield 與 EDA flow 的地基。</p>
+
+            <p><strong>台積電 Product Diagnosis（約 2.5 年）</strong>：從測試開發再往前一步，變成「找出量產現場的問題、建立證據、推動修正、讓方法可重複」。Scan-chain / DFT diagnosis、ATE testing、yield learning，參與 leading mobile AP product 的量產 bring-up，讓我第一次看到設計圖紙與矽晶片現實之間的落差有多大，以及誰在真正彌合這個落差。</p>
+
+            <p><strong>台積電 CAD Flow（Advanced Node、EDA Ecosystem）</strong>：從 16nm 到 3nm，做 simulator qualification、NanoTime STA certification、AMS / RC extraction / EMIR flow 整合。這一段我從「單一工具使用者」變成「EDA vendor、foundry model、PDK 與 customer requirement 之間的整合者」——也是日後加入 Cadence 的直接準備。</p>
+
+            <p><strong>Cadence（現職）</strong>：現在站在 EDA product、customer flow 與 foundry enablement 的交界。每天在做的事，本質上是把客戶痛點、foundry 限制、產品能力與 R&amp;D 語言互相翻譯。</p>
+
+            <p>把這六段放在一起看，差異不是「換了領域」，而是同一個能力沿著半導體全端業務鏈往兩端延伸：從電路設計延伸到量產測試與良率現場，再延伸到上游 EDA 工具與 foundry 生態。<strong>我是少數能完整貫穿「設計 → 製造 → 量產 → 工具」四個斷面的人，而不是只熟悉其中一段</strong>。</p>
+
+            <h2>真正的差異化，不是任何一段經驗本身</h2>
+
+            <p>多數工程師只看過半導體價值鏈的一個斷面——只懂設計，或只懂測試，或只懂良率，或只懂工具。我的複合優勢是同時理解四層：電路與系統如何被設計出來、設計規格如何被轉成可在量產線執行的測試與診斷方法、EDA 結果如何落到 silicon / yield / 量產壓力、EDA vendor 如何進入客戶 flow、建立 adoption 與 stickiness。</p>
+
+            <p>所以核心價值從來不是「會用 Cadence 工具」，而是三件更難被複製的事：判斷客戶真正的 technical pain point、翻譯 foundry / customer / product / R&amp;D 四種不同的語言、把 AI agent、EDA flow、advanced node 與 silicon learning 串成一個可驗證的方案。</p>
+
+            <p>這也是為什麼我認為下一階段不該把自己定位成「更熟練的工具專家」，而是：</p>
+
+            <blockquote>AI EDA / Foundry Flow / Silicon Feedback 的跨域技術架構者——擅長把 foundry、設計客戶、EDA 工具與 AI workflow 串起來，解決先進製程與複雜 SoC 開發中的 debug、signoff、verification 與 yield learning 問題。</blockquote>
+
+            <h2>三大支柱：用 AI 把半導體全產業鏈串成綜效</h2>
+
+            <p>我不想把這個定位寫成三條「分開的職涯路線」，因為那樣會錯過重點。真正的命題是：<strong>這三個支柱本來就是同一條全端業務鏈的三個環節，而 AI 是把它們串起來、放大成綜效的槓桿</strong>。</p>
+
+            <p><strong>1. AI EDA Workflow Architect</strong>（把工具鏈的產出變成可複利的知識）——把 log、report、timing、power、formal 與 diagnosis 結果轉成 structured knowledge，建立「問題分類 → root-cause hypothesis → 建議 action → evidence verification」的 bounded agent workflow。重點不是「AI 會不會寫 code」，而是能不能實際縮短 debug、triage 與 report review 的時間；真正的護城河必須包含 domain model、verification、data boundary 與 workflow ownership。而我能定義這些 domain model，正是因為我同時懂設計端在乎什麼、測試端能量到什麼、良率端要追蹤什麼。</p>
+
+            <p><strong>2. Foundry / Advanced Node / 3D-IC Interface Expert</strong>（把製造端的限制翻譯成可執行的工程語言）——advanced-node implementation / validation / signoff flow、3D-IC / chiplet / package-aware design、power integrity / thermal / EMIR multiphysics、foundry reference flow 與 PDK enablement。最適合的角色不是單純 AE，而是 Foundry-facing Solution Architect 或 Technical Product Strategist。</p>
+
+            <p><strong>3. Diagnosis / Yield / Silicon Feedback Loop</strong>（把量產現場的訊號回灌到設計與工具）——把 design data → EDA report → silicon result → yield feedback → design / foundry action 這條鏈，做成 AI-assisted Silicon Learning Loop：ATPG / diagnosis result summarization、failure pattern clustering、design-for-debug recommendation、cross-domain root-cause analysis。這條線的價值是時間累積出來的，沒有捷徑——而我的 TPDD 與 Product Diagnosis 經驗，正是這條鏈最早、最難被複製的第一手資料。</p>
+
+            <p><strong>綜效在哪裡</strong>：單獨看，每一條支柱都只是「半導體產業裡的一個專業職能」。但因為我同時站在設計、量產測試、良率診斷與 EDA 工具四個斷面上，我能做的不是優化單一環節，而是看到：設計端的決策如何影響測試良率、測試與診斷數據如何反過來該被 EDA 工具吸收、AI agent 又如何讓這個迴圈跑得更快、更可信。這個「全端視角 + AI 放大」的組合，才是真正稀缺、也最難被單點專家複製的能力。</p>
+
+            <h2>應該避免的三個坑</h2>
+
+            <p><strong>只成為工具熟手</strong>。工具能力是底盤，不是終局，要把工具知識封裝成 customer diagnosis、flow architecture 與 AI automation 能力。</p>
+
+            <p><strong>只把台積電經驗當光環</strong>。經歷提供 credibility，但只有轉成現在可用的 checklist、demo、methodology 與跨團隊影響力，才會持續增值。</p>
+
+            <p><strong>過早轉純管理</strong>。目前最有槓桿的是複合技術能力，順序應該是 Senior technical IC → Solution Architect → Product / strategy influence → Selective management。</p>
+
+            <hr>
+
+            <h2>結語</h2>
+
+            <p>回頭看這 16 年，我不覺得自己一直在「轉換領域」。我一直在做同一件事——貫穿半導體從電路設計、量產測試、良率診斷到 EDA 工具鏈的全端業務，把中間斷掉的因果鏈接回去。RFIC 是這條鏈的起點，台積電的測試開發與良率診斷經驗是中段，EDA 平台是現在的位置，AI agent 則是讓這條鏈第一次有機會被系統化、被規模化、產生綜效。</p>
+
+            <p>下一階段我不會把自己定位成「更熟練的 Cadence 工具使用者」，而是能把半導體全產業鏈整合起來、並用 AI 放大綜效的 AI EDA × Foundry Flow × Silicon Feedback 跨域技術架構者。</p>
+          </div>
+
+        </div>
+      </main>
+
+      <footer class="statusbar">
+        <div class="status-group">
+          <span class="status-item">DRC: <b>0 errors</b></span>
+          <span class="status-item">LVS: <b>clean</b></span>
+          <span class="status-item"><span class="amber">io_pad: bonded</span></span>
+        </div>
+        <div class="status-group">
+          <span class="status-item">&copy; <span id="y"></span> Jarvis Wang</span>
+          <span class="status-item">25.03°N 121.56°E · TAIPEI</span>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
